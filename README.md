@@ -119,6 +119,25 @@ n8n-rag-knowledge-assistant/
 └── .gitignore
 ```
 
+
+---
+
+## 6. Setup
+
+Then:
+
+```markdown
+## Setup
+
+1. Import the two workflow JSON files into n8n.
+2. Configure your own Google Drive, Supabase, Ollama, and Groq credentials.
+3. Select your knowledge-base PDF in the ingestion workflow.
+4. Create the `rag_documents` vector table.
+5. Configure the `match_documents` Supabase RPC using the SQL file in `database/`.
+6. Run the ingestion workflow to index the documents.
+7. Run the RAG Agent workflow and start asking questions.
+```
+
 ## Security
 
 Workflow exports are sanitized to remove n8n credential references and instance-specific identifiers. Never commit API keys, passwords, `.env` files, or credential exports.
