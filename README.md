@@ -119,7 +119,7 @@ n8n-rag-knowledge-assistant/
 ├── README.md
 ├── LICENSE
 └── .gitignore
-
+```
 ## Configuration
 
 - Chunk size: 800
@@ -148,8 +148,6 @@ n8n-rag-knowledge-assistant/
 ├── README.md
 └── .gitignore
 ```
-
-
 ---
 
 ## 6. Setup
