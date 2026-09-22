@@ -37,6 +37,18 @@ Chat Trigger → AI Agent → Supabase Vector Store → Retrieved Context → Gr
 
 **Vector retrieval:** `match_documents`
 
+## Key Features
+
+- 📄 PDF knowledge-base ingestion
+- 🔎 Semantic vector search using Supabase pgvector
+- 🧠 Ollama `nomic-embed-text` embeddings
+- 🤖 AI Agent with tool-based retrieval
+- ⚡ Groq `openai/gpt-oss-20b` for response generation
+- 🔐 Document-grounded responses
+- 🛑 Prevents unsupported answers when information is not found
+- 🔄 Separate ingestion and query workflows
+- 🧩 Modular n8n architecture
+
 ## Stack
 
 - n8n
