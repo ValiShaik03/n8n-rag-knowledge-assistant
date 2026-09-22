@@ -62,6 +62,18 @@ Chat Trigger → AI Agent → Supabase Vector Store → Retrieved Context → Gr
 | GPT-OSS-20B | Response generation |
 | PostgreSQL | Vector database backend |
 
+## Testing & Validation
+
+The RAG assistant was tested with both positive and negative knowledge-base queries.
+
+| Query | Result |
+|---|---|
+| What is the project name? | ✅ Atlas Support Assistant |
+| What is the project code? | ✅ ATLAS-47 |
+| What is the embedding model? | ✅ nomic-embed-text |
+| What is the CEO's name? | ✅ Information not found in the uploaded document |
+
+The negative test verifies that the assistant does not provide an unsupported answer when the requested information is absent from the knowledge base.
 ## Configuration
 
 - Chunk size: 800
