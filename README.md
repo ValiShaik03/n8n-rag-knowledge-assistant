@@ -2,16 +2,40 @@
 
 End-to-end Retrieval-Augmented Generation (RAG) assistant built with n8n, Groq, Ollama, Supabase pgvector, and Google Drive.
 
-## Workflows
-
-- **RAG Knowledge Ingestion** — indexes PDF knowledge into Supabase.
-- **RAG Agent Final** — retrieves relevant knowledge and answers user questions.
-
 ## System Architecture
 
 ![RAG Knowledge Assistant Architecture](docs/architecture.png)
 
 The system separates document ingestion from question answering. Documents are processed and embedded into Supabase pgvector, while the AI Agent retrieves relevant context before generating grounded responses.
+
+## Workflows
+
+### Workflow 1 — RAG Knowledge Ingestion
+
+The ingestion workflow prepares documents for semantic search.
+
+**Pipeline:**
+
+Google Drive → PDF Download → Data Loader → Text Splitting → Ollama Embeddings → Supabase pgvector
+
+**Configuration:**
+- Chunk size: 800 characters
+- Chunk overlap: 120 characters
+- Embedding model: `nomic-embed-text`
+- Embedding dimensions: 768
+- Vector table: `rag_documents`
+
+### Workflow 2 — RAG Agent Final
+
+The agent workflow handles user questions and retrieves relevant document context before generating an answer.
+
+**Pipeline:**
+
+Chat Trigger → AI Agent → Supabase Vector Store → Retrieved Context → Groq LLM → Answer
+
+**LLM:** `openai/gpt-oss-20b`
+
+**Vector retrieval:** `match_documents`
 
 ## Stack
 
