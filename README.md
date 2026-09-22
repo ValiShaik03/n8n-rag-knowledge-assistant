@@ -74,6 +74,22 @@ The RAG assistant was tested with both positive and negative knowledge-base quer
 | What is the CEO's name? | ✅ Information not found in the uploaded document |
 
 The negative test verifies that the assistant does not provide an unsupported answer when the requested information is absent from the knowledge base.
+
+## Project Structure
+
+```text
+n8n-rag-knowledge-assistant/
+├── workflows/
+│   ├── rag-knowledge-ingestion.json
+│   └── rag-agent-final.json
+├── database/
+│   └── match_documents.sql
+├── docs/
+│   └── architecture.png
+├── README.md
+├── LICENSE
+└── .gitignore
+
 ## Configuration
 
 - Chunk size: 800
