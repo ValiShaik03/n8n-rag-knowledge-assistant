@@ -150,7 +150,7 @@ n8n-rag-knowledge-assistant/
 ```
 ---
 
-## 6. Setup
+## Setup
 
 Then:
 
