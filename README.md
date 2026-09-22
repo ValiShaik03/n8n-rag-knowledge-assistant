@@ -7,6 +7,12 @@ End-to-end Retrieval-Augmented Generation (RAG) assistant built with n8n, Groq, 
 - **RAG Knowledge Ingestion** — indexes PDF knowledge into Supabase.
 - **RAG Agent Final** — retrieves relevant knowledge and answers user questions.
 
+## System Architecture
+
+![RAG Knowledge Assistant Architecture](docs/architecture.png)
+
+The system separates document ingestion from question answering. Documents are processed and embedded into Supabase pgvector, while the AI Agent retrieves relevant context before generating grounded responses.
+
 ## Stack
 
 - n8n
@@ -30,12 +36,6 @@ End-to-end Retrieval-Augmented Generation (RAG) assistant built with n8n, Groq, 
 - Project code → `ATLAS-47`
 - Embedding model → `nomic-embed-text`
 - Unknown CEO question → information not found in the uploaded document
-
-## System Architecture
-
-![RAG Knowledge Assistant Architecture](docs/architecture.png)
-
-The system separates document ingestion from question answering. Documents are processed and embedded into Supabase pgvector, while the AI Agent retrieves relevant context before generating grounded responses.
 
 ## Structure
 
