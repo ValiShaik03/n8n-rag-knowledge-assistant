@@ -31,6 +31,12 @@ End-to-end Retrieval-Augmented Generation (RAG) assistant built with n8n, Groq, 
 - Embedding model → `nomic-embed-text`
 - Unknown CEO question → information not found in the uploaded document
 
+## System Architecture
+
+![RAG Knowledge Assistant Architecture](docs/architecture.png)
+
+The system separates document ingestion from question answering. Documents are processed and embedded into Supabase pgvector, while the AI Agent retrieves relevant context before generating grounded responses.
+
 ## Structure
 
 ```text
