@@ -75,6 +75,36 @@ The RAG assistant was tested with both positive and negative knowledge-base quer
 
 The negative test verifies that the assistant does not provide an unsupported answer when the requested information is absent from the knowledge base.
 
+## Challenges Faced
+
+### 1. Embedding Model and Vector Dimension Compatibility
+
+Initially, different embedding providers produced incompatible vector dimensions for the Supabase pgvector table. The system was standardized on Ollama `nomic-embed-text`, which produces 768-dimensional embeddings, and the `rag_documents` table was configured accordingly.
+
+### 2. Retrieval Accuracy for Short Queries
+
+Short questions such as "What is the project code?" did not always return the most relevant chunk when only one document was retrieved. The retrieval configuration was tuned to return multiple relevant candidates, allowing the AI Agent to use the correct context before generating the final response.
+
+## Limitations
+
+- The current knowledge base depends on the documents that have been ingested into Supabase.
+- Updating source documents requires running the ingestion workflow again.
+- Retrieval quality can vary for very short or ambiguous queries.
+- The current implementation is primarily designed for document-based question answering rather than general-purpose web research.
+- Ollama embeddings require the Ollama service to be available when generating or querying embeddings.
+- The current project has been validated with a controlled knowledge base and would require additional testing with larger and more diverse document collections for production use.
+
+## What's Next
+
+- Add support for multiple document types such as DOCX, TXT, and additional PDF sources.
+- Implement automatic document update and re-indexing when files change.
+- Add conversation memory for multi-turn questions.
+- Add source citations so users can see which document chunks support each answer.
+- Add authentication and user-specific knowledge bases.
+- Add monitoring for retrieval quality, latency, token usage, and LLM costs.
+- Deploy the complete system as a production-ready application.
+- Add evaluation datasets and automated RAG quality testing.
+
 ## Project Structure
 
 ```text
