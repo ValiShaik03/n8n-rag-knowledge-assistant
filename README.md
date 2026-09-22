@@ -49,13 +49,18 @@ Chat Trigger → AI Agent → Supabase Vector Store → Retrieved Context → Gr
 - 🔄 Separate ingestion and query workflows
 - 🧩 Modular n8n architecture
 
-## Stack
+## Technology Stack
 
-- n8n
-- Groq `openai/gpt-oss-20b`
-- Ollama `nomic-embed-text`
-- Supabase PostgreSQL / pgvector
-- Google Drive
+| Technology | Purpose |
+|---|---|
+| n8n | Workflow automation and AI Agent orchestration |
+| Google Drive | Knowledge-base document storage |
+| Ollama | Local embedding generation |
+| nomic-embed-text | 768-dimensional embeddings |
+| Supabase | PostgreSQL + pgvector vector storage |
+| Groq | LLM inference |
+| GPT-OSS-20B | Response generation |
+| PostgreSQL | Vector database backend |
 
 ## Configuration
 
